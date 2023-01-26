@@ -27,3 +27,6 @@ Drawings are made with draw.io and plantuml.
 * The HTML files will need to be processed with a HTML2Markdown converter  (e.g. https://metamug.com/util/confluence-to-markdown/)
 * References to the images must be changed and the images placed at the right point
 * Also the tables should be prettified for editing (https://www.freeformatter.com/html-formatter.html)
+
+# Contact
+opendata@sbb.ch
