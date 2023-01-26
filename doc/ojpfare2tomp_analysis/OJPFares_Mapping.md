@@ -13,7 +13,7 @@ For the usage in OJP fare best practice for the implementation of TOMP or the co
 
 Following table describes the values which can be used in an [OJPFares Request](https://github.com/VDVde/OJP/blob/master/OJP_Fare.xsd) to use as elements in [TOMP "planning/inquiry"](https://app.swaggerhub.com/apis-docs/TOMP-API-WG/transport-operator_maas_provider_api/1.3.0#/planning/post_planning_inquiries) Request. We are only using TripFareRequest with parameters..
 
-<table class="relative-table confluenceTable" width="800" style="width: 90.9521%;">
+<table width="800">
    <colgroup>
       <col style="width: 37.8629%;">
       <col style="width: 28.7188%;">
