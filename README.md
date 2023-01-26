@@ -4,10 +4,12 @@ It is mostly for things that we evolve with version control.
 
 Standards you may find here: https://transportdatamanagement.ch/de/
 
-#Current content
-* The EU Spirit OJP profile
-* The Linking Alps profile
-* A description of the interaction of the OJP fare service with TOMP: doc
+# Current content
+* The Linking Alps profile: https://github.com/openTdataCH/ojpch/tree/main/doc/profile
+* A description of the interaction of the OJP fare service with TOMP: https://github.com/openTdataCH/ojpch/tree/main/doc/ojpfare2tomp_analysis
+
+# Future content
+* The EU Spirit OJP profile: https://github.com/openTdataCH/ojpch/tree/main/doc/profile-eu-spirit
 
 # Used tool chains
 
