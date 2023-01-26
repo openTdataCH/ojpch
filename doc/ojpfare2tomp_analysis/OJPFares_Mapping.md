@@ -13,7 +13,7 @@ For the usage in OJP fare best practice for the implementation of TOMP or the co
 
 Following table describes the values which can be used in an [OJPFares Request](https://github.com/VDVde/OJP/blob/master/OJP_Fare.xsd) to use as elements in [TOMP "planning/inquiry"](https://app.swaggerhub.com/apis-docs/TOMP-API-WG/transport-operator_maas_provider_api/1.3.0#/planning/post_planning_inquiries) Request. We are only using TripFareRequest with parameters..
 
-<table width="800px">
+<table class="relative-table confluenceTable"  style="width: 90.9521%;">
    <colgroup>
       <col style="width: 37.8629%;">
       <col style="width: 28.7188%;">
@@ -40,13 +40,13 @@ Following table describes the values which can be used in an [OJPFares Request](
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">-</span></td>
       </tr>
       <tr>
-         <td class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.ErrorMessage.Text.TextId</span></td>
+         <td class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult. ErrorMessage.Text.TextId</span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">n/a</span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">OK</span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">-</span></td>
       </tr>
       <tr>
-         <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TriPFareRequest.Trip <strong>TripStructure</strong></span></td>
+         <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TriPFareRequest. Trip <strong>TripStructure</strong></span></td>
          <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);"><strong>from/to</strong></span></td>
          <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">Structures which contain trip that is used to build the from/to for each TOMP request. Be aware that this may be need to split into multiple TOMP request. One per leg that needs a price.</span></td>
          <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">Process through each leg</span></td>
@@ -115,7 +115,7 @@ Following table describes the values which can be used in an [OJPFares Request](
          </td>
       </tr>
       <tr>
-         <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TripFareRequest.TripLeg.Service.OperatorRefs</span></td>
+         <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TripFareRequest. TripLeg.Service.OperatorRefs</span></td>
          <td style="text-align: left;" class="confluenceTd">n/a</td>
          <td style="text-align: left;" class="confluenceTd">
             <p><span style="color: rgb(0,0,0);">&nbsp;However, the OperatorRefs tell which endpoint to use. Therefore the OperatorRefs must be processed to get the necessary end points with the Service Catalogue.</span></p>
@@ -147,7 +147,7 @@ Following table describes the values which can be used in an [OJPFares Request](
          <td style="text-align: left;" class="confluenceTd">
             <p><span style="color: rgb(0,0,0);"><strong>Possibilities to get the coordinates&nbsp; *</strong></span></p>
             <ol>
-               <li><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.TripLeg.LegStart/LegEnd.CallPlace.GeoPosition.Longitude</strong></span></li>
+               <li><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.TripLeg.LegStart/LegEnd.CallPlace. GeoPosition.Longitude</strong></span></li>
                <li><span style="color: rgb(0,0,0);"><strong>Client uses OJP.LocationInformationRequestto get GeoLocation</strong></span></li>
                <li><span style="color: rgb(0,0,0);"><strong>Server is able to search for GeoPosition using the References (StopPointRef, StopPlaceRef, TopographicPlaceRef, PointOfInterestRef, AddressRef)</strong></span></li>
             </ol>
@@ -210,7 +210,7 @@ Following table describes the values which can be used in an [OJPFares Request](
       </tr>
       <tr>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TripFareRequest.Trip[n].Distance</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TripFareRequest. Trip[n].Distance</span></p>
             <p><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip.TimedLeg.LegTrack.TrackSection.Length&nbsp;</strong></span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">estimatedDistance</span></td>
@@ -226,7 +226,7 @@ Following table describes the values which can be used in an [OJPFares Request](
       </tr>
       <tr>
          <td class="confluenceTd">
-            <p style="text-align: left;"><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip.TripLeg.TimedLeg/ContinuousLeg.Leg.ServiceDeparture.TimetabledTime</strong></span></p>
+            <p style="text-align: left;"><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip.TripLeg.TimedLeg/ContinuousLeg.Leg. ServiceDeparture.TimetabledTime</strong></span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);"><em>departureTime</em></span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">OK</span></td>
