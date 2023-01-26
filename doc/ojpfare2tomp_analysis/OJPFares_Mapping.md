@@ -1,4 +1,4 @@
-#Mapping for OJPFareRequest to TOMP "planning/inquiries" and "planning/offers" request
+# Mapping for OJPFareRequest to TOMP "planning/inquiries" and "planning/offers" request
 
 The OJP fare service does not really provide booking, but assigns prices to trips (TRIP) or trip legs (LEG). However, this creates a hiatus between OJP and TOMP:
 
@@ -40,13 +40,13 @@ Following table describes the values which can be used in an [OJPFares Request](
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">-</span></td>
       </tr>
       <tr>
-         <td class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.ErrorMessage.Text.TextId</span></td>
+         <td class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult. ErrorMessage.Text.TextId</span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">n/a</span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">OK</span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">-</span></td>
       </tr>
       <tr>
-         <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TriPFareRequest.Trip <strong>TripStructure</strong></span></td>
+         <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TriPFareRequest. Trip <strong>TripStructure</strong></span></td>
          <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);"><strong>from/to</strong></span></td>
          <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">Structures which contain trip that is used to build the from/to for each TOMP request. Be aware that this may be need to split into multiple TOMP request. One per leg that needs a price.</span></td>
          <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">Process through each leg</span></td>
@@ -115,7 +115,7 @@ Following table describes the values which can be used in an [OJPFares Request](
          </td>
       </tr>
       <tr>
-         <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TripFareRequest.TripLeg.Service.OperatorRefs</span></td>
+         <td style="text-align: left;" class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TripFareRequest. TripLeg.Service.OperatorRefs</span></td>
          <td style="text-align: left;" class="confluenceTd">n/a</td>
          <td style="text-align: left;" class="confluenceTd">
             <p><span style="color: rgb(0,0,0);">&nbsp;However, the OperatorRefs tell which endpoint to use. Therefore the OperatorRefs must be processed to get the necessary end points with the Service Catalogue.</span></p>
