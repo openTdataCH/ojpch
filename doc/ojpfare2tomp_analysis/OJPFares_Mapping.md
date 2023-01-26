@@ -1,4 +1,4 @@
-#Mapping for OJPFareRequest to TOMP "planning/inquiries" and "planning/offers" request
+# Mapping for OJPFareRequest to TOMP "planning/inquiries" and "planning/offers" request
 
 The OJP fare service does not really provide booking, but assigns prices to trips (TRIP) or trip legs (LEG). However, this creates a hiatus between OJP and TOMP:
 
