@@ -1,7 +1,13 @@
-# ojpch
+# ojpch - Repository
+This is the documentation repository of SKI+ (mainly for OJP). Here you find different documents, studies, profiles that are useful for things that are on the Swiss NAP (https://opentransportdata.swiss/)
+It is mostly for things that we evolve with version control.
 
-this is the ojpch repo
+Standards you may find here: https://transportdatamanagement.ch/de/
 
+#Current content
+* The EU Spirit OJP profile
+* The Linking Alps profile
+* A description of the interaction of the OJP fare service with TOMP: doc
 
 # Used tool chains
 
