@@ -13,12 +13,12 @@ For the usage in OJP fare best practice for the implementation of TOMP or the co
 
 Following table describes the values which can be used in an [OJPFares Request](https://github.com/VDVde/OJP/blob/master/OJP_Fare.xsd) to use as elements in [TOMP "planning/inquiry"](https://app.swaggerhub.com/apis-docs/TOMP-API-WG/transport-operator_maas_provider_api/1.3.0#/planning/post_planning_inquiries) Request. We are only using TripFareRequest with parameters..
 
-<table class="relative-table confluenceTable" style="width: 90.9521%;">
+<table class="relative-table confluenceTable" style="width: 100;">
    <colgroup>
-      <col style="width: 37.8629%;">
-      <col style="width: 28.7188%;">
-      <col style="width: 13.6012%;">
-      <col style="width: 19.8045%;">
+      <col style="width: 20%;">
+      <col style="width: 20%;">
+      <col style="width: 20%;">
+      <col style="width: 20%;">
    </colgroup>
    <tbody>
       <tr>
@@ -147,8 +147,8 @@ Following table describes the values which can be used in an [OJPFares Request](
          <td style="text-align: left;" class="confluenceTd">
             <p><span style="color: rgb(0,0,0);"><strong>Possibilities to get the coordinates&nbsp; *</strong></span></p>
             <ol>
-               <li><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.TripLeg.LegStart/LegEnd.CallPlace.GeoPosition.Longitude</strong></span></li>
-               <li><span style="color: rgb(0,0,0);"><strong>Client uses OJP.LocationInformationRequestto get GeoLocation</strong></span></li>
+               <li><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.TripLeg. LegStart/LegEnd.CallPlace.GeoPosition.Longitude</strong></span></li>
+               <li><span style="color: rgb(0,0,0);"><strong>Client uses OJP.LocationInformationRequestto  get GeoLocation</strong></span></li>
                <li><span style="color: rgb(0,0,0);"><strong>Server is able to search for GeoPosition using the References (StopPointRef, StopPlaceRef, TopographicPlaceRef, PointOfInterestRef, AddressRef)</strong></span></li>
             </ol>
          </td>
@@ -211,7 +211,7 @@ Following table describes the values which can be used in an [OJPFares Request](
       <tr>
          <td class="confluenceTd">
             <p><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TripFareRequest.Trip[n].Distance</span></p>
-            <p><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip.TimedLeg.LegTrack.TrackSection.Length&nbsp;</strong></span></p>
+            <p><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip.TimedLeg. LegTrack.TrackSection.Length&nbsp;</strong></span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">estimatedDistance</span></td>
          <td class="confluenceTd">
@@ -226,7 +226,7 @@ Following table describes the values which can be used in an [OJPFares Request](
       </tr>
       <tr>
          <td class="confluenceTd">
-            <p style="text-align: left;"><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip.TripLeg.TimedLeg/ContinuousLeg.Leg.ServiceDeparture.TimetabledTime</strong></span></p>
+            <p style="text-align: left;"><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip.TripLeg. TimedLeg/ContinuousLeg.Leg.ServiceDeparture.TimetabledTime</strong></span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);"><em>departureTime</em></span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">OK</span></td>
@@ -234,7 +234,7 @@ Following table describes the values which can be used in an [OJPFares Request](
       </tr>
       <tr>
          <td class="confluenceTd">
-            <p style="text-align: left;"><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip.TripLeg.TimedLeg/ContinuousLeg.Leg.ServiceArrival.TimetabledTime</strong></span></p>
+            <p style="text-align: left;"><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip.TripLeg. TimedLeg/ContinuousLeg.Leg.ServiceArrival.TimetabledTime</strong></span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);"><em>arrivalTime</em></span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">OK</span></td>
@@ -321,7 +321,7 @@ Following table describes the values which can be used in an [OJPFares Request](
             <p><span style="color: rgb(0,0,0);"><em>travelers.traveler.requirements</em></span></p>
             <p><span style="color: rgb(0,0,0);"><em>requirementsStructure</em></span></p>
             <p><span style="color: rgb(0,0,0);"><em>Requirements from the end user side.</em></span></p>
-            <p><span style="color: rgb(0,0,0);">source &nbsp; &nbsp;string</span><br><span style="color: rgb(0,0,0);">if obsolete, it is referencing the travelers' dictionary (<a href="https://github.com/TOMP-WG/TOMP-API/blob/master/documents/CROW%20passenger%20characteristics.xlsx" class="external-link" rel="nofollow">https://github.com/TOMP-WG/TOMP-API/blob/master/documents/CROW%20passenger%20characteristics.xlsx</a>)</span></p>
+            <p><span style="color: rgb(0,0,0);">source &nbsp; &nbsp;string</span><br><span style="color: rgb(0,0,0);">if obsolete, it is referencing the travelers' dictionary (<a href="https://github.com/TOMP-WG/TOMP-API/blob/master/documents/CROW%20passenger%20characteristics.xlsx" class="external-link" rel="nofollow">https://github.com/TOMP-WG/TOMP-API/blob/master /documents/CROW%20passenger%20characteristics.xlsx</a>)</span></p>
             <p><span style="color: rgb(0,0,0);">category* &nbsp; &nbsp;string</span><br><span style="color: rgb(0,0,0);">references to the first column of the specification initial values [ HR, AV, HV, AB, AER, K, ZR, RR ]</span></p>
             <p><span style="color: rgb(0,0,0);">number* &nbsp; &nbsp;string</span><br><span style="color: rgb(0,0,0);">minLength: 2</span><br><span style="color: rgb(0,0,0);">maxLength: 2</span><br><span style="color: rgb(0,0,0);">references to the second column of the specification</span></p>
             <p><span style="color: rgb(0,0,0);">type &nbsp; &nbsp;string</span><br><span style="color: rgb(0,0,0);">conditionally extra information, referencing to the 3th column</span></p>
@@ -570,10 +570,10 @@ Mapping for TOMP "planning/inquiry" response to OJP Fares response
 
 Following table drescribes the mapping from TOMP to OJP response
 
-<table class="relative-table confluenceTable" style="width: 89.1507%;">
+<table class="relative-table confluenceTable" style="width: 100%;">
    <colgroup>
-      <col style="width: 18.6347%;">
-      <col style="width: 43.9729%;">
+      <col style="width: 20%;">
+      <col style="width: 20%;">
       <col style="width: 16.0517%;">
       <col style="width: 21.3407%;">
    </colgroup>
@@ -662,7 +662,7 @@ Following table drescribes the mapping from TOMP to OJP response
          <td class="confluenceTd">
             <p><span style="color: rgb(0,0,0);"><a href="http://pricing.fare.parts.farePart.name" class="external-link" rel="nofollow">pricing.fare.parts.farePart.name</a></span></p>
          </td>
-         <td class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductName</span></td>
+         <td class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult. FareProduct.FareProductName</span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">OK</span></td>
          <td class="confluenceTd"><br></td>
       </tr>
@@ -672,7 +672,7 @@ Following table drescribes the mapping from TOMP to OJP response
             <p><span style="color: rgb(0,0,0);">type: float</span></p>
          </td>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductPriceGroup.Price</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult. FareProduct.FareProductPriceGroup.Price</span></p>
             <p><span style="color: rgb(0,0,0);">type: decimal</span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">OK</span></td>
@@ -684,7 +684,7 @@ Following table drescribes the mapping from TOMP to OJP response
             <p><span style="color: rgb(0,0,0);">type: float</span></p>
          </td>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductPriceGroup.NetPrice</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult. FareProduct.FareProductPriceGroup.NetPrice</span></p>
             <p><span style="color: rgb(0,0,0);">type: decimal</span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">OK</span></td>
@@ -696,7 +696,7 @@ Following table drescribes the mapping from TOMP to OJP response
             <p><span style="color: rgb(0,0,0);">ISO 4217 currency code</span></p>
          </td>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductPriceGroup.Currency</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult. FareProduct.FareProductPriceGroup.Currency</span></p>
             <p><span style="color: rgb(0,0,0);">ISO 4217 currency code</span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">OK</span></td>
@@ -708,7 +708,7 @@ Following table drescribes the mapping from TOMP to OJP response
             <p><span style="color: rgb(0,0,0);">type: float</span></p>
          </td>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductPriceGroup.VatRate</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult. FareProduct.FareProductPriceGroup.VatRate</span></p>
             <p><span style="color: rgb(0,0,0);">enum: no, full, half, mixed, unknown</span></p>
          </td>
          <td class="confluenceTd">
@@ -727,7 +727,7 @@ Following table drescribes the mapping from TOMP to OJP response
          </td>
          <td class="confluenceTd">
             <div class="content-wrapper">
-               <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductValidityGroup.TravelClass</span></p>
+               <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult. FareProduct.FareProductValidityGroup.TravelClass</span></p>
                <p><span style="color: rgb(0,0,0);">Is of type NMToken with enumeration</span></p>
                <span style="color: rgb(0,0,0);">[all, first, second, third, business, economy]</span>
             </div>
@@ -742,7 +742,8 @@ Following table drescribes the mapping from TOMP to OJP response
       <tr>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">options.booking.customer.cardTypeStructure</span></td>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductValidityGroup.RequiredCard</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.
+            FareProductValidityGroup.RequiredCard</span></p>
             <p><span style="color: rgb(0,0,0);">Doc: "One or more traveller cards that are needed for purchase of this FareProduct. In most cases traveller cards offer discounts, f.e. BahnCard50 of Deutsche Bahn."</span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">In TOMP the card type is described for a specific customer.&nbsp;</span></td>
@@ -752,7 +753,8 @@ Following table drescribes the mapping from TOMP to OJP response
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">n/a</span></td>
          <td class="confluenceTd">
             <div class="content-wrapper">
-               <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductValidityGroup.ValidFor</span></p>
+               <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.
+               FareProductValidityGroup.ValidFor</span></p>
                <p><span style="color: rgb(0,0,0);">is of type string with enumeration</span></p>
                <p><span style="color: rgb(0,0,0);">[Adult, Child, Senior, Youth, Disabled]</span></p>
             </div>
@@ -765,7 +767,8 @@ Following table drescribes the mapping from TOMP to OJP response
       <tr>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">n/a</span></td>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductValidityGroup.ValidityDuration</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.
+            FareProductValidityGroup.ValidityDuration</span></p>
             <p><span style="color: rgb(0,0,0);">Doc: "Maximum duration of FareProduct validity starting with purchase of ticket or begin of journey (ticket validation)."</span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">Not needed, as no purchase of ticket is done</span></td>
@@ -776,7 +779,7 @@ Following table drescribes the mapping from TOMP to OJP response
       <tr>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">n/a</span></td>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductValidityGroup.ValidiityDurationText</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct. FareProductValidityGroup.ValidiityDurationText</span></p>
             <p><span style="color: rgb(0,0,0);">Doc: "Textual description of maximum validity duration"</span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">Not needed.</span></td>
@@ -785,7 +788,7 @@ Following table drescribes the mapping from TOMP to OJP response
       <tr>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">n/a</span></td>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductValidityGroup.ValidityTariffZones</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct. FareProductValidityGroup.ValidityTariffZones</span></p>
             <p><span style="color: rgb(0,0,0);">Doc: "patial validity of FareProduct defined as list of fare zones."</span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">Tarif zones concept is not handled in TOMP</span></td>
@@ -796,7 +799,7 @@ Following table drescribes the mapping from TOMP to OJP response
       <tr>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">n/a</span></td>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductValidityGroup.ValidityAreaText</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct. FareProductValidityGroup.ValidityAreaText</span></p>
             <p><span style="color: rgb(0,0,0);">Doc: "Textual description of spatial validity."</span></p>
          </td>
          <td class="confluenceTd"><br></td>
@@ -807,7 +810,7 @@ Following table drescribes the mapping from TOMP to OJP response
       <tr>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">n/a</span></td>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductBookingGroup.InfoUrl</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult. FareProduct.FareProductBookingGroup.InfoUrl</span></p>
             <p><span style="color: rgb(0,0,0);">Doc: "URL to information for this FareProduct"</span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">This information may not be of use for the customer.</span></td>
@@ -818,7 +821,7 @@ Following table drescribes the mapping from TOMP to OJP response
       <tr>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">n/a</span></td>
          <td class="confluenceTd">
-            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductBookingGroup.SaleUrld</span></p>
+            <p><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct. FareProductBookingGroup.SaleUrld</span></p>
             <p><span style="color: rgb(0,0,0);">Doc: "URL to buy the FareProduct online"</span></p>
          </td>
          <td class="confluenceTd">
@@ -834,7 +837,8 @@ Following table drescribes the mapping from TOMP to OJP response
       </tr>
       <tr>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">n/a</span></td>
-         <td class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.FareProduct.FareProductBookingGroup.BookingArrangements</span></td>
+         <td class="confluenceTd"><span style="color: rgb(0,0,0);">OJP.FareResponse.FareResult.TripFareResult.
+         FareProduct.FareProductBookingGroup.BookingArrangements</span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">not needed, for fare information</span></td>
          <td class="confluenceTd">
             <p><span style="color: rgb(0,0,0);">atm not needed</span></p>
