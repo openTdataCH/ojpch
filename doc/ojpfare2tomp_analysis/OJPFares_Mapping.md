@@ -211,7 +211,7 @@ Following table describes the values which can be used in an [OJPFares Request](
       <tr>
          <td class="confluenceTd">
             <p><span style="color: rgb(0,0,0);">OJP.OJPFareRequest.TripFareRequest. Trip[n].Distance</span></p>
-            <p><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip.TimedLeg.LegTrack.TrackSection.Length&nbsp;</strong></span></p>
+            <p><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip. TimedLeg.LegTrack.TrackSection.Length&nbsp;</strong></span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">estimatedDistance</span></td>
          <td class="confluenceTd">
@@ -226,7 +226,7 @@ Following table describes the values which can be used in an [OJPFares Request](
       </tr>
       <tr>
          <td class="confluenceTd">
-            <p style="text-align: left;"><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest.Trip.TripLeg.TimedLeg/ContinuousLeg.Leg. ServiceDeparture.TimetabledTime</strong></span></p>
+            <p style="text-align: left;"><span style="color: rgb(0,0,0);"><strong>OJP.OJPFareRequest.TripFareRequest. Trip.TripLeg.TimedLeg/ContinuousLeg.Leg. ServiceDeparture.TimetabledTime</strong></span></p>
          </td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);"><em>departureTime</em></span></td>
          <td class="confluenceTd"><span style="color: rgb(0,0,0);">OK</span></td>
