@@ -50,6 +50,7 @@ France:
 * Alsace: https://www.data.gouv.fr/fr/organizations/mulhouse-alsace-agglomeration/
 * Grand-Est: missing
 * Bourgogne-Franche-Comte: https://transport.data.gouv.fr/datasets/reseau-de-transport-interurbain-mobigo-en-bourgogne-franche-comte/?locale=en&slug=reseau-de-transport-interurbain-mobigo-en-bourgogne-franche-comte
+* TER: https://ressources.data.sncf.com/explore/dataset/sncf-ter-gtfs/table/
 
 Long distance buses
 * Flixbus: https://www.data.gouv.fr/fr/organizations/flixbus-france/
@@ -58,7 +59,7 @@ Long distance buses
 Others
 * Eurostar: https://www.data.gouv.fr/fr/datasets/eurostar-gtfs/
 * Provence: https://www.data.gouv.fr/fr/datasets/lignes-des-reseaux-de-transport-zou-en-provence-alpes-cote-dazur/ 
-* 
+
 ## Getting the data from a file
 ```R
 library(gtfstools)
@@ -87,9 +88,20 @@ spo_path <- file.path(data_path, "latest.zip")
 #spo_path <- file.path(data_path, "20230127-0130_gtfs_salzburgverkehr_2023.zip")
 #spo_path <- file.path(data_path, "20230128-0207_gtfs_vmobil_2023.zip")
 #spo_path <- file.path(data_path, "20230128-0202_gtfs_vvt_2023.zip")
-@spo_path <- file.path(data_path, "20230128-0132_gtfs_verbundlinie_2023.zip")
+#spo_path <- file.path(data_path, "20230128-0132_gtfs_verbundlinie_2023.zip")
 #spo_path <- file.path(data_path, "20230128-0121_gtfs_evu_2023.zip")
 #spo_path <- file.path(data_path, "20230128-0148_gtfs_vor_2023.zip")
+
+#France
+spo_path <- file.path(data_path, "UT25.GTFS.zip")
+#spo_path <- file.path(data_path, "UT89.GTFS.zip")
+#spo_path <- file.path(data_path, "UT39.GTFS.zip")
+#spo_path <- file.path(data_path, "UT71.GTFS.zip")
+#spo_path <- file.path(data_path, "UT70.GTFS.zip")
+#spo_path <- file.path(data_path, "UT21.GTFS.zip")
+#spo_path <- file.path(data_path, "UT58.GTFS.zip")
+#spo_path <- file.path(data_path, "DAT_AURA_GTFS_ExportAOM_Option1.zip")
+#spo_path <- file.path(data_path, "export-ter-gtfs-last.zip")
 
 spo_gtfs <- read_gtfs(spo_path)
 names(spo_gtfs)
