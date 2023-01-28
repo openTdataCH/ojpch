@@ -113,6 +113,44 @@ library(leaflet)
 m <- leaflet() %>% setView(lng =7.444 , lat = 46.947, zoom = 7) %>% addTiles() %>% addPolylines(data=clipped)
 m
 ```
+
+# Some analytics (withouth plotting)
+```R
+library(gtfstools)
+library(sf)
+library(data.table)
+from datatable import dt
+data_path <- file.path("D:","development","gtfs_with_r", fsept="\\")
+#currently stored files (on my machine), select only one spo_path
+
+#Flixbus
+spo_path <- file.path(data_path, "gtfs_generic_flixbus.zip")
+
+spo_gtfs <- read_gtfs(spo_path)
+print("The files seen")
+names(spo_gtfs)
+print("number of agencies")
+uniqueN(spo_gtfs$agency)
+print("some agencies seen")
+t1 <- unique(spo_gtfs$agency)
+print(t1)
+print("number of routes")
+uniqueN(spo_gtfs$routes)
+print("number of trips")
+uniqueN(spo_gtfs$trips)
+print("time covered (we assume no feed info is present)")
+min(spo_gtfs$calendar$start_date)
+min(spo_gtfs$calendar_dates$date)
+
+max(spo_gtfs$calendar$end_date)
+max(spo_gtfs$calendar_dates$date)
+print("route_types")
+t1 <- unique(spo_gtfs$routes$route_type)
+head(t1)
+print("number of stops")
+uniqueN(spo_gtfs$stops)
+```
+
 # Clipping to a bounding box around Switzerland
 ```R
 library(gtfstools)
