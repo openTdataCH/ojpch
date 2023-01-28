@@ -23,56 +23,118 @@ source("where")
 ```
 
 ## Possible sources around Switzerland
+
+Switzerland and Liechtenstein
 * Swiss GTFS (!changes with year): https://opentransportdata.swiss/en/dataset/timetable-2023-gtfs2020
-* France:
-** ARA: https://transport.data.gouv.fr/datasets/agregat-oura
-** Alsace: https://www.data.gouv.fr/fr/organizations/mulhouse-alsace-agglomeration/
-** Grand-Est: missing
-** Bourgogne-Franche-Comte: https://transport.data.gouv.fr/datasets/reseau-de-transport-interurbain-mobigo-en-bourgogne-franche-comte/?locale=en&slug=reseau-de-transport-interurbain-mobigo-en-bourgogne-franche-comte
-* Long distance buses
-** Flixbus: https://www.data.gouv.fr/fr/organizations/flixbus-france/
+
+Germany:
+* Baden-Würtemberg: 
+* Bayern:
+* Deutschland:
+
+Austria
+* https://mobilitaetsdaten.gv.at/daten/soll-fahrplandaten-gtfs 
+
+Italy
+* STA: missing
+* 5T: missing
+* ARIA: missing
+* Aosta: missing
+* Italian rail: missing
+
+
+France:
+* ARA: https://transport.data.gouv.fr/datasets/agregat-oura
+* Alsace: https://www.data.gouv.fr/fr/organizations/mulhouse-alsace-agglomeration/
+* Grand-Est: missing
+* Bourgogne-Franche-Comte: https://transport.data.gouv.fr/datasets/reseau-de-transport-interurbain-mobigo-en-bourgogne-franche-comte/?locale=en&slug=reseau-de-transport-interurbain-mobigo-en-bourgogne-franche-comte
+
+Long distance buses
+* Flixbus: https://www.data.gouv.fr/fr/organizations/flixbus-france/
 * blablacarbus: https://www.data.gouv.fr/fr/organizations/blablacar-bus/
 
-* Others
-** Eurostar: https://www.data.gouv.fr/fr/datasets/eurostar-gtfs/
-** Provence: https://www.data.gouv.fr/fr/datasets/lignes-des-reseaux-de-transport-zou-en-provence-alpes-cote-dazur/ 
+Others
+* Eurostar: https://www.data.gouv.fr/fr/datasets/eurostar-gtfs/
+* Provence: https://www.data.gouv.fr/fr/datasets/lignes-des-reseaux-de-transport-zou-en-provence-alpes-cote-dazur/ 
 ## Getting the data from a file
 ```R
 library(gtfstools)
 library(sf)
 data_path <- file.path("D:","development","gtfs_with_r", fsept="\\")
 #currently stored files (on my machine), select only one spo_path
-spo_path <- file.path(data_path, "gtfs_fp2023_2023-01-18_04-15.zip")
-#spo_path <- file.path(data_path, "SOLEA.GTFS_current.zip")
-#spo_path <- file.path(data_path, "gtfs-interurbain-du-01-01-22-au-31-08-22.zip")
+#Switzerland
+#spo_path <- file.path(data_path, "gtfs_fp2023_2023-01-18_04-15.zip")
+
+#Baden-Würtemberg
 #spo_path <- file.path(data_path, "bwgesamt.zip")
-spo_path <- file.path(data_path, "gtfs_generic_flixbus.zip")
+
+#Bayern
+# tbd
+
+#Flixbus
+#spo_path <- file.path(data_path, "gtfs_generic_flixbus.zip")
+
+#Blablacarbus
 #spo_path <- file.path(data_path, "gtf_blablacarbus.zip")
+
+#Salzburg
+spo_path <- file.path(data_path, "20230127-0130_gtfs_salzburgverkehr_2023.zip")
+
+
 #spo_gtfs <- read_gtfs(spo_path)
 names(spo_gtfs)
 #the next command returns a LINESTRING sf
 trip_geom <- get_trip_geometry(spo_gtfs, file = "stop_times")
+clipped <- trip_geom$geometry  #no clipping
+# and put things on a map centered around Bern
+library(leaflet)
+m <- leaflet() %>% setView(lng =7.444 , lat = 46.947, zoom = 7) %>% addTiles() %>% addPolylines(data=clipped)
+m
+```
+# Clipping to a bounding box around Switzerland
+```R
+library(gtfstools)
+library(sf)
+data_path <- file.path("D:","development","gtfs_with_r", fsept="\\")
+#currently stored files (on my machine), select only one spo_path
+#Switzerland
+#spo_path <- file.path(data_path, "gtfs_fp2023_2023-01-18_04-15.zip")
+
+#Baden-Würtemberg
+#spo_path <- file.path(data_path, "bwgesamt.zip")
+
+#Bayern
+# tbd
+
+#Flixbus
+#spo_path <- file.path(data_path, "gtfs_generic_flixbus.zip")
+
+#Blablacarbus
+#spo_path <- file.path(data_path, "gtf_blablacarbus.zip")
+
+#Salzburg
+spo_path <- file.path(data_path, "20230127-0130_gtfs_salzburgverkehr_2023.zip")
 
 
+#spo_gtfs <- read_gtfs(spo_path)
+names(spo_gtfs)
+#the next command returns a LINESTRING sf
+trip_geom <- get_trip_geometry(spo_gtfs, file = "stop_times")
 #Switzerland  https://gist.github.com/graydon/11198540
 xmin = 6.02260949059
 xmax = 10.4427014502
 ymax = 47.8308275417
 ymin = 45.7769477403
-#Increase bounding box
+#Increase bounding box a bit to see more
 slack = 0.5
 bb <- st_bbox(c(xmin = xmin-slack, xmax = xmax+slack, ymax = ymax+slack, ymin = ymin-slack), crs = st_crs(4326))
 ch1 <-st_as_sfc(bb)
 clipped <- st_intersection(trip_geom$geometry,ch1)
- ```
-
-And putting things onto a map
-```R
+# and put things on a map centered around Bern
 library(leaflet)
-m <- leaflet() %>% setView(lng =7.444 , lat = 46.947, zoom = 6) %>% addTiles() %>% addPolylines(data=clipped)
+m <- leaflet() %>% setView(lng =7.444 , lat = 46.947, zoom = 7) %>% addTiles() %>% addPolylines(data=clipped)
 m
 ```
-
 # Reading form an URL
 ```R
 #Permalink Swiss data 2023: https://opentransportdata.swiss/en/dataset/timetable-2023-gtfs2020/permalink
