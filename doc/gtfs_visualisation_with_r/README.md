@@ -28,9 +28,9 @@ Switzerland and Liechtenstein
 * Swiss GTFS (!changes with year): https://opentransportdata.swiss/en/dataset/timetable-2023-gtfs2020
 
 Germany:
-* Baden-Würtemberg: 
-* Bayern:
-* Deutschland:
+* Baden-Würtemberg: https://www.mobidata-bw.de/dataset/
+* Bayern: missing
+* Deutschland: https://gtfs.de/
 
 Austria
 * https://mobilitaetsdaten.gv.at/daten/soll-fahrplandaten-gtfs 
@@ -42,6 +42,8 @@ Italy
 * Aosta: missing
 * Italian rail: missing
 
+Slowenia:
+* https://www.nap.si/en (not open and not free)
 
 France:
 * ARA: https://transport.data.gouv.fr/datasets/agregat-oura
@@ -56,6 +58,7 @@ Long distance buses
 Others
 * Eurostar: https://www.data.gouv.fr/fr/datasets/eurostar-gtfs/
 * Provence: https://www.data.gouv.fr/fr/datasets/lignes-des-reseaux-de-transport-zou-en-provence-alpes-cote-dazur/ 
+* 
 ## Getting the data from a file
 ```R
 library(gtfstools)
@@ -65,11 +68,14 @@ data_path <- file.path("D:","development","gtfs_with_r", fsept="\\")
 #Switzerland
 #spo_path <- file.path(data_path, "gtfs_fp2023_2023-01-18_04-15.zip")
 
-#Baden-Würtemberg
-#spo_path <- file.path(data_path, "bwgesamt.zip")
+# Baden-Würtemberg
+spo_path <- file.path(data_path, "bwgesamt.zip")
 
-#Bayern
+# Bayern
 # tbd
+
+# Deutschland
+spo_path <- file.path(data_path, "latest.zip")
 
 #Flixbus
 #spo_path <- file.path(data_path, "gtfs_generic_flixbus.zip")
@@ -77,11 +83,15 @@ data_path <- file.path("D:","development","gtfs_with_r", fsept="\\")
 #Blablacarbus
 #spo_path <- file.path(data_path, "gtf_blablacarbus.zip")
 
-#Salzburg
-spo_path <- file.path(data_path, "20230127-0130_gtfs_salzburgverkehr_2023.zip")
+#Österrecih
+#spo_path <- file.path(data_path, "20230127-0130_gtfs_salzburgverkehr_2023.zip")
+#spo_path <- file.path(data_path, "20230128-0207_gtfs_vmobil_2023.zip")
+#spo_path <- file.path(data_path, "20230128-0202_gtfs_vvt_2023.zip")
+@spo_path <- file.path(data_path, "20230128-0132_gtfs_verbundlinie_2023.zip")
+#spo_path <- file.path(data_path, "20230128-0121_gtfs_evu_2023.zip")
+#spo_path <- file.path(data_path, "20230128-0148_gtfs_vor_2023.zip")
 
-
-#spo_gtfs <- read_gtfs(spo_path)
+spo_gtfs <- read_gtfs(spo_path)
 names(spo_gtfs)
 #the next command returns a LINESTRING sf
 trip_geom <- get_trip_geometry(spo_gtfs, file = "stop_times")
@@ -98,25 +108,9 @@ library(sf)
 data_path <- file.path("D:","development","gtfs_with_r", fsept="\\")
 #currently stored files (on my machine), select only one spo_path
 #Switzerland
-#spo_path <- file.path(data_path, "gtfs_fp2023_2023-01-18_04-15.zip")
+spo_path <- file.path(data_path, "gtfs_fp2023_2023-01-18_04-15.zip")
 
-#Baden-Würtemberg
-#spo_path <- file.path(data_path, "bwgesamt.zip")
-
-#Bayern
-# tbd
-
-#Flixbus
-#spo_path <- file.path(data_path, "gtfs_generic_flixbus.zip")
-
-#Blablacarbus
-#spo_path <- file.path(data_path, "gtf_blablacarbus.zip")
-
-#Salzburg
-spo_path <- file.path(data_path, "20230127-0130_gtfs_salzburgverkehr_2023.zip")
-
-
-#spo_gtfs <- read_gtfs(spo_path)
+spo_gtfs <- read_gtfs(spo_path)
 names(spo_gtfs)
 #the next command returns a LINESTRING sf
 trip_geom <- get_trip_geometry(spo_gtfs, file = "stop_times")
@@ -129,6 +123,8 @@ ymin = 45.7769477403
 slack = 0.5
 bb <- st_bbox(c(xmin = xmin-slack, xmax = xmax+slack, ymax = ymax+slack, ymin = ymin-slack), crs = st_crs(4326))
 ch1 <-st_as_sfc(bb)
+#clipping the lines to the bounding box
+# TODO sometime single points remain that cause problem with leaflet.
 clipped <- st_intersection(trip_geom$geometry,ch1)
 # and put things on a map centered around Bern
 library(leaflet)
