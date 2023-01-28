@@ -9,4 +9,6 @@
 * Change colors of lines
 * Having a different color for each route_type
 * Try to get missing GTFS
-* 
+* Handling merges
+* Thinking about a pipeline to load things
+* check around Interlaken for all types of traffic. I am not sure that all route_types are covered.
