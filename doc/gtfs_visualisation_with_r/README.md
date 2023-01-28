@@ -23,8 +23,19 @@ source("where")
 ```
 
 ## Possible sources around Switzerland
-xxx
+* Swiss GTFS (!changes with year): https://opentransportdata.swiss/en/dataset/timetable-2023-gtfs2020
+* France:
+** ARA: https://transport.data.gouv.fr/datasets/agregat-oura
+** Alsace: https://www.data.gouv.fr/fr/organizations/mulhouse-alsace-agglomeration/
+** Grand-Est: missing
+** Bourgogne-Franche-Comte: https://transport.data.gouv.fr/datasets/reseau-de-transport-interurbain-mobigo-en-bourgogne-franche-comte/?locale=en&slug=reseau-de-transport-interurbain-mobigo-en-bourgogne-franche-comte
+* Long distance buses
+** Flixbus: https://www.data.gouv.fr/fr/organizations/flixbus-france/
+* blablacarbus: https://www.data.gouv.fr/fr/organizations/blablacar-bus/
 
+* Others
+** Eurostar: https://www.data.gouv.fr/fr/datasets/eurostar-gtfs/
+** Provence: https://www.data.gouv.fr/fr/datasets/lignes-des-reseaux-de-transport-zou-en-provence-alpes-cote-dazur/ 
 ## Getting the data from a file
 ```R
 library(gtfstools)
@@ -35,9 +46,9 @@ spo_path <- file.path(data_path, "gtfs_fp2023_2023-01-18_04-15.zip")
 #spo_path <- file.path(data_path, "SOLEA.GTFS_current.zip")
 #spo_path <- file.path(data_path, "gtfs-interurbain-du-01-01-22-au-31-08-22.zip")
 #spo_path <- file.path(data_path, "bwgesamt.zip")
-#spo_path <- file.path(data_path, "gtfs_generic_flixbus.zip")
+spo_path <- file.path(data_path, "gtfs_generic_flixbus.zip")
 #spo_path <- file.path(data_path, "gtf_blablacarbus.zip")
-spo_gtfs <- read_gtfs(spo_path)
+#spo_gtfs <- read_gtfs(spo_path)
 names(spo_gtfs)
 #the next command returns a LINESTRING sf
 trip_geom <- get_trip_geometry(spo_gtfs, file = "stop_times")
@@ -62,6 +73,14 @@ m <- leaflet() %>% setView(lng =7.444 , lat = 46.947, zoom = 6) %>% addTiles() %
 m
 ```
 
+# Reading form an URL
+```R
+#Permalink Swiss data 2023: https://opentransportdata.swiss/en/dataset/timetable-2023-gtfs2020/permalink
+
+data_path <- "https://opentransportdata.swiss/dataset/507c734f-0d9f-48be-843c-7bfd3bf5ec15/resource/afa1055f-21bf-47b5-9421-f64fc9f00bd6/download/gtfs_fp2023_2023-01-25_04-15.zip"
+#TODO problem with Swiss permalink (does not have a .ZIP ending)
+gtfs <- read_gtfs(data_path)
+```
 #  Filtering: Only a  given hour of the day
 ```R
 
@@ -95,6 +114,8 @@ xxx
 ```
 
 #  Filtering by service
+TODO: This does not work, as Switzerland uses the new route_types 103 etc. Possible idea: To transform them before using them in gtfstools
+
 ```R
 # 0 - Tram, Streetcar, Light rail. Any light rail or street level system within a metropolitan area.
 # 1 - Subway, Metro. Any underground rail system within a metropolitan area.
