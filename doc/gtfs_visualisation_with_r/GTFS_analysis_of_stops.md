@@ -4,6 +4,7 @@ Matthias Günter, GnostX GmbH
 
 ## Sources
 * https://gis.stackexchange.com/questions/17638/clustering-spatial-data-in-r
+* https://stackoverflow.com/questions/32583606/create-spatialpointsdataframe (about SpacialPointsDataFrame generation)
 
 ## Installing
 
@@ -20,14 +21,23 @@ Matthias Günter, GnostX GmbH
 library(sp)
 library(rgdal)
 library(geosphere)
+library(gtfstools)
+library(sf)
 
-# Load GTFS file
-xxx
+# change the data path to your data path
+data_path <- file.path("D:","development","gtfs_with_r", fsept="\\") 
+
+#the spo_path should be set to files that are on your machine. This is a snapshot from mine (exactly one should be uncommented here
+#Switzerland
+spo_path <- file.path(data_path, "gtfs_fp2023_2023-01-18_04-15.zip")
+spo_gtfs <- read_gtfs(spo_path)
+
 # Load the matrix to work it
 xy <-spo_gtfs$stops
 
 # Transform xy into a SpatialPointsDataFrame
 coordinates(xy) <- 3:4
+proj4string(xy) <- CRS("+proj=longlat +ellps=WGS84 +datum=WGS84")
 
 # Calculate the distance matrix
 mdist <- distm(xy)
@@ -39,10 +49,25 @@ d=40
 hc <- hclust(as.dist(mdist), method="complete")
 xy$clust <- cutree(hc, h=d)
 
-# Print out all clusters that are not simple (containing one element)
+# some info
+# class
+class(xy)
+# bounding box
+bbox(xy)
 
-subset(xy,clust ==6)@data
-subset(xy,clust ==6)@coords
+
+# Print out all clusters that are not simple (containing one element)
+#
+my_splits <- split(xy,xy$clust)
+
+for (i in 1:length(my_splits)){
+
+    o <- cbind(my_splits[[i]]@data,my_splits[[i]]@coords)
+    if (nrow(o)>1){
+       cat("\n\ngroup: ",i,"\n")    
+       print(o)
+       }
+    }
 ```
 
 ## Calculating grouping from the structure in stop_areas.txt
